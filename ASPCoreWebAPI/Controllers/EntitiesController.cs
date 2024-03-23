@@ -28,15 +28,22 @@ namespace ASPCoreWebAPI.Controllers
             return Ok(entities);
         }
 
-        [HttpPost]
+       /* [HttpPost]
         public ActionResult Post([FromBody] Entity entity)
         {
             EntityDatabaseMock.AddEntity(entity);
             return CreatedAtAction(nameof(Get), new { id = entity.Id }, entity);
+        }*/
+        [HttpPost]
+
+        public ActionResult Post(Entity entity)
+        {
+            EntityDatabaseMock.AddEntity(entity);
+            return Ok(entity);
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(string id, [FromBody] Entity entity)
+        public ActionResult Put(string id,Entity entity)
         {
             var existingEntity = EntityDatabaseMock.GetEntityById(id);
             if (existingEntity == null)

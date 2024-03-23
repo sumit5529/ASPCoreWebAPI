@@ -12,20 +12,20 @@ namespace ASPCoreWebAPI.Data
             // Initialize with a sample entity for demonstration
             new Entity
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = "1",
                 Deceased = false,
                 Gender = "Male",
                 Addresses = new List<Address>
                 {
-                    new Address { AddressLine = "123 Main St", City = "Anytown", Country = "Country" }
+                    new Address { AddressLine = "123 Main St", City = "Ayodhya", Country = "India" }
                 },
                 Dates = new List<Date>
                 {
-                    new Date { DateType = "Birth", Dates = new DateTime(1980, 1, 1) }
+                    new Date { DateType = "Birth", Dates = new DateTime(2003, 07, 07) }
                 },
                 Names = new List<Name>
                 {
-                    new Name { FirstName = "John", MiddleName = "Q", Surname = "Public" }
+                    new Name { FirstName = "Sumit", MiddleName = "Kumar", Surname = "Mishra" }
                 }
             }
         };
@@ -53,6 +53,7 @@ namespace ASPCoreWebAPI.Data
             ).ToList();
         }
 
+
         public static Entity GetEntityById(string id)
         {
           Entity entity = _entities.First(e => e.Id == id);
@@ -79,3 +80,5 @@ namespace ASPCoreWebAPI.Data
         }
     }
 }
+
+
